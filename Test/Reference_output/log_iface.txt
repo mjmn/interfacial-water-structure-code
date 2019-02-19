@@ -1,0 +1,17 @@
+Tstep:	10
+N_traj:	1
+dx:	0.993508
+dy:	0.993508
+dz:	0.993508
+Lx:	64.578
+Ly:	64.578
+Lz:	64.578
+cg_l:	2.4
+R:	7.2
+coeff:	0.0868056
+rho_b:	0.0336
+
+Calculation is currently  20.000 % done.
+Calculation is currently  40.000 % done.
+Calculation is currently  60.000 % done.
+Calculation is currently  80.000 % done.
