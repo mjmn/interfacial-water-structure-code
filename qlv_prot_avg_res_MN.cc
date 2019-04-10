@@ -136,7 +136,7 @@ int main(int argc, char * argv[]) {
     }
   
   // load the joint prob distibutions of bulk...
-  ifstream p_bulk ("../tip3p/pbulk_w2_tip3p.txt"); // MNiesen; changed the source directory location, should not be hardcoded ***
+  ifstream p_bulk ("../ref_structure/pbulk_w2_tip3p.txt"); // MNiesen; changed the source directory location, should not be hardcoded ***
   if(!p_bulk){
     cerr << "could not find file: ../tip3p/pbulk_w2_tip3p.txt" << endl;
     exit(1);
@@ -158,7 +158,7 @@ int main(int argc, char * argv[]) {
   p_bulk.close();
 
 // load the joint prob distibutions of liq-vap interface...
-  ifstream p_lv ("../tip3p/pjoint_sm2.txt"); // MNiesen; changed the source directory location, should not be hardcoded ***
+  ifstream p_lv ("../ref_structure/pjoint_sm2.txt"); // MNiesen; changed the source directory location, should not be hardcoded ***
   if(!p_lv){
     cerr << "could not find file: ../tip3p/pjoint_sm2.txt" << endl;
     exit(1);
@@ -187,7 +187,7 @@ int main(int argc, char * argv[]) {
   
   p_lv.close();
 
-  ifstream pa_lv ("../tip3p/pofa.txt"); // MNiesen; changed the source directory location, should not be hardcoded ***
+  ifstream pa_lv ("../ref_structure/pofa.txt"); // MNiesen; changed the source directory location, should not be hardcoded ***
   if(!p_lv){
     cerr << "could not find file: ../tip3p/pofa.txt" << endl;
     exit(1);
