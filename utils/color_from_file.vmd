@@ -1,0 +1,54 @@
+# VMD Script that takes an MD trajectory file and the colors it based on a second file with color over time for each atom
+
+### VARIABLES
+#set pdb_file protein.pdb
+set pdb_file 1.gro
+#set traj_file protein.xtc
+set traj_file 2.gro
+set color_file [open "colors.txt" r]
+#set maxres 108
+set maxres 578 
+set firstres 1
+
+### DISPLAY TRAJECTORY
+# Visualization options
+display rendermode GLSL
+display depthcue off
+axes location Off
+color Display Background white
+
+# Remove excisting molecules
+if {[molinfo num] > 0} {
+ mol delete all
+}
+
+# Load the pdb and the trajectory data
+mol addfile $pdb_file waitfor all
+mol addfile $traj_file waitfor all
+
+# Extract trajectory info
+set numframes [molinfo top get numframes]
+set numatoms [molinfo top get numatoms]
+
+# Setup the variable colors
+mol modcolor 0 top User
+mol colupdate 0 top 1
+mol scaleminmax top 0 -0.6 1.0
+color scale method BWR
+color scale midpoint 0.375
+color scale min 0
+color scale max 1.0 
+
+# Iterate over frames to color each frame independently
+for {set i 0} {$i<$numframes} {incr i} {
+ animate goto $i
+ for {set j $firstres} {$j<=($maxres)} {incr j} {
+  set clr [gets $color_file]
+  set asel [atomselect top "residue $j" frame $i]
+  $asel set user $clr
+  $asel delete
+ }
+}
+
+# Molecule visualization options
+mol modstyle 0 0 NewCartoon 0.3 10.0 4.1 0

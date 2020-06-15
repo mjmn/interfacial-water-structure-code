@@ -11,7 +11,9 @@ R:	7.2
 coeff:	0.0868056
 rho_b:	0.0336
 
-Calculation is currently  20.000 % done.
-Calculation is currently  40.000 % done.
-Calculation is currently  60.000 % done.
-Calculation is currently  80.000 % done.
+Calculation is currently  10.000 % done.
+Calculation is currently  30.000 % done.
+Calculation is currently  50.000 % done.
+Calculation is currently  70.000 % done.
+Calculation is currently  90.000 % done.
+Complete! 
